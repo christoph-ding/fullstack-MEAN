@@ -16,8 +16,11 @@ app.use(function(req, res, next) {
 
 // really simple routing
 app.get('/', function(req, res) {
-  console.log('got to the root GET endpoint');
   res.status(200);
-  res.send('this is the response for the root GET endpoint');
+  res.send('this is the response for the root GET endpoint\n');
 });
 
+app.get('/cookies', function(req, res) {
+  res.status(200);
+  res.send('have a cookie!\n');
+})
