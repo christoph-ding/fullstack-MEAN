@@ -6,25 +6,7 @@ app.listen(8000, function() {
   console.log('Listening');
 });
 
-require('./middleware.js')(app);
-
-app.use(function(req, res, next) {
-  console.log('reached the app server!');
-  next();
-});
-
-// really simple routing
-app.get('/', function(req, res) {
-  res.status(200);
-  res.send('this is the response for the root GET endpoint\n');
-});
-
-// url parameters
-app.post('/cookies', function(req, res) {
-  var flavor = req.body.flavor;
-  res.status(200);
-  res.send('have a ' + flavor + ' cookie!\n');
-});
+require('./middleware.js')(app, express);
 
 // === Example of using a module like an api ===
 // var test = require('./test.js').hiddenVariable;
