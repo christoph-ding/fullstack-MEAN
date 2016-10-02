@@ -1,0 +1,19 @@
+{
+  "name": "fullstack-mean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ironpup/fullstack-MEAN.git"
+  },
+  "author": "rebecca kleinberg, chris ding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ironpup/fullstack-MEAN/issues"
+  },
+  "homepage": "https://github.com/ironpup/fullstack-MEAN#readme"
+}
