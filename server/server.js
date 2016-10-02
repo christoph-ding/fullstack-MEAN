@@ -1,6 +1,4 @@
 var express = require('express');
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -8,8 +6,7 @@ app.listen(8000, function() {
   console.log('Listening');
 });
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
+require('./middleware.js')(app);
 
 app.use(function(req, res, next) {
   console.log('reached the app server!');
@@ -29,15 +26,15 @@ app.post('/cookies', function(req, res) {
   res.send('have a ' + flavor + ' cookie!\n');
 });
 
+// === Example of using a module like an api ===
 // var test = require('./test.js').hiddenVariable;
 // console.log('test is: ', test);
 
-var person = {
-  'name': 'steve',
-  'shoesOn': false
-}
+// === Example of how passing an object to a module works === 
+// var person = {
+//   'name': 'steve',
+//   'shoesOn': false
+// }
 
-
-var test2 = require('./test2.js')(person);
-
-console.log('our person is: ', person);
+// var test2 = require('./test2.js')(person);
+// console.log('our person is: ', person);
